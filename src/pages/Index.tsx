@@ -1,3 +1,16 @@
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-border/50 animate-fade-in-up stagger-3">
+              {[
+                { value: "500+", label: "Members" },
+                { value: "50+", label: "Events Hosted" },
+                { value: "20+", label: "Partners" },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-gradient">{stat.value}</div>
+                  <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
+                </div>
+              ))}
+            </div>
 import { Link } from "react-router-dom";
 import { ArrowRight, Code2, Users, Calendar, Sparkles, Terminal, Cpu } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -54,9 +67,6 @@ const Index = () => {
         </div>
 
         {/* Decorative Elements */}
-        <div className="absolute top-20 left-10 opacity-20 float">
-          <Terminal className="h-16 w-16 text-primary" />
-        </div>
         <div className="absolute bottom-20 right-10 opacity-20 float" style={{ animationDelay: "2s" }}>
           <Cpu className="h-20 w-20 text-accent" />
         </div>
@@ -71,14 +81,12 @@ const Index = () => {
 
             {/* Main Heading */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">
-              <span className="text-foreground">Build. Learn. </span>
-              <span className="text-gradient">Innovate.</span>
+              <span className="text-foreground" style={{ textShadow: '0 4px 24px #3b82f6, 0 1px 2px #60a5fa' }}>The X-Ops Club</span>
             </h1>
 
             {/* Subheading */}
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-in-up stagger-1">
-              Join X-Ops, the premier tech club where developers, designers, and innovators 
-              come together to shape the future of technology.
+              Empowering the next generation of tech innovators through workshops, hackathons, and a vibrant community of passionate developers.
             </p>
 
             {/* CTA Buttons */}
@@ -97,9 +105,9 @@ const Index = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-border/50 animate-fade-in-up stagger-3">
               {[
-                { value: "500+", label: "Members" },
-                { value: "50+", label: "Events Hosted" },
-                { value: "20+", label: "Partners" },
+                { value: "20+", label: "Members" },
+                { value: "1+", label: "Events Hosted" },
+                { value: "3+", label: "Partners" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-3xl md:text-4xl font-bold text-gradient">{stat.value}</div>
@@ -141,43 +149,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Upcoming Events Preview */}
-      <section className="py-24 bg-card/30">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Upcoming <span className="text-gradient">Events</span>
-              </h2>
-              <p className="text-muted-foreground">
-                Don't miss out on our exciting upcoming events and workshops.
-              </p>
-            </div>
-            <Button variant="hero-outline" asChild className="mt-6 md:mt-0">
-              <Link to="/events">
-                View All Events
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {upcomingEvents.map((event, index) => (
-              <div
-                key={event.title}
-                className="glass rounded-xl p-6 card-hover animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-4">
-                  {event.type}
-                </div>
-                <h3 className="text-lg font-semibold mb-2">{event.title}</h3>
-                <p className="text-muted-foreground text-sm">{event.date}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Upcoming Events Preview removed as requested */}
 
       {/* CTA Section */}
       <section className="py-24">
@@ -187,7 +159,7 @@ const Index = () => {
               Ready to Start Your <span className="text-gradient">Tech Journey?</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-              Join our community of 500+ members and get access to exclusive events, 
+              Join our community of 20+ members and get access to exclusive events, 
               workshops, and networking opportunities.
             </p>
             <Button variant="gradient" size="xl" asChild>
